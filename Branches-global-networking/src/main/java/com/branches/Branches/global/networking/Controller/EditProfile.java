@@ -70,35 +70,7 @@ public class EditProfile {
 
 	
 
-//
-//	@PostMapping
-//	public String saveUser(@ModelAttribute("user") AdminUser updatedUser)
-//	                   {
-//
-//	    Long userId = updatedUser.getId();
-//
-//	    if (userId != null) {
-//	        Optional<AdminUser> adminUserOptional = adminrepo.findById(userId);
-//
-//	        if (adminUserOptional.isPresent()) {
-//	            AdminUser existingUser = adminUserOptional.get();
-//
-//	           
-//	            existingUser.setName(updatedUser.getName());
-//	            existingUser.setEmail(updatedUser.getEmail());
-//
-//	        
-//
-//	            adminrepo.save(existingUser);
-//
-//	            return "redirect:/admin/dashboard"; 
-//	        } else {
-//	            return "redirect:/error";
-//	        }
-//	    } else {
-//	        return "redirect:/error"; 
-//	    }
-//	}
+
 		
 
 
