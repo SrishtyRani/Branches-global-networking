@@ -59,28 +59,7 @@ public class DashBoard {
 	    return "DashBoard"; 
 	}
 	
-//	@GetMapping("/admin/inquary")
-//	public String getinquary(Model model) {
-//		List<InquiryModel> inquiry = inquaryrepo.findAll();
-//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//		if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
-//			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-//			String loggedInUserEmail = userDetails.getUsername();
-//
-//			Optional<AdminUser> adminUserOptional = adminrepo.findByEmail(loggedInUserEmail);
-//			if (adminUserOptional.isPresent()) {
-//				AdminUser adminUser = adminUserOptional.get();
-//				model.addAttribute("loggedInUserName", adminUser.getName());
-//				  model.addAttribute("loggedInUserPhoto", adminUser.getPath());
-//			} else {
-//				model.addAttribute("loggedInUserName", "Unknown");
-//			}
-//		} else {
-//			model.addAttribute("loggedInUserName", "Unknown");
-//		}
-//		model.addAttribute("inquiry", inquiry);
-//		return "inquary";
-//	}
+
 	
 	
 
@@ -136,11 +115,7 @@ public class DashBoard {
 	
 
 	
-//	@GetMapping("/admin/editprofile")
-//	public String editprofile() {
-//
-//		return "editprofile";
-//	}
+
 
 	 
 	 
