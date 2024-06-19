@@ -1,0 +1,31 @@
+<div th:fragment="sidebar">
+
+
+	<div class="sidebar" id="sidebar">
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+			<ul>
+						<li class="menu-title">Main</li>
+						<li ><a href="/admin/dashboard"><span class="menu-side"><img
+									th:src="@{/assets/img/icons/menu-icon-01.svg}" alt=""></span> <span>
+									Dashboard </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+
+							</ul></li>
+						<li ><a href="/admin/inquary"><span class="menu-side"><img
+									th:src="@{/assets/img/icons/menu-icon-02.svg}" alt=""></span> <span>
+									Inquiries</span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+
+							</ul></li>
+							</ul>
+
+						<div class="logout-btn">
+							<a href="/logout"><span class="menu-side"><img
+									th:src="@{/assets/img/icons/logout.svg}" alt=""></span> <span>Logout</span></a>
+						</div>
+				</div>
+			</div>
+		</div>
+			
+						

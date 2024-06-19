@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/html/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 10:42:53 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/121%201.png">
+    <title>Branches Global Network</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/assets/plugins/fontawesome/css/all.min.css}">
+<link rel="stylesheet" th:href="@{/assets/css/select2.min.css}">
+
+<!-- Fontawesome CSS -->
+<link rel="stylesheet" th:href="@{/assets/plugins/fontawesome/css/fontawesome.min.css}">
+
+<!-- Datatables CSS -->
+<link rel="stylesheet" th:href="@{/assets/plugins/datatables/datatables.min.css}">
+
+<!-- Feathericon CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/feather.css}">
+
+<!-- Main CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+
+     
+</head>
+
+<body>
+	<div class="main-wrapper">
+		<div th:replace="~{header :: header}"></div>
+		
+	
+	<div th:replace="~{side :: sidebar}"></div>
+		
+		<!-- right------------------   -->
+		     <div class="page-wrapper">
+            <div class="content">
+			
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Dashboard </a></li>
+								<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+								<li class="breadcrumb-item active">Admin Dashboard</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Header -->
+				
+				<div class="good-morning-blk">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="morning-user">
+							<h2>Hello, <span th:text="${loggedInUserName}"></span></h2>
+							
+								<p>Have a nice day at work</p>
+							</div>
+						</div>
+						<div class="col-md-6 position-blk">
+							<div class="morning-img">
+								<img src="/assets/img/morning-img-01.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+                </div>
+            </div>
+		
+		</div>
+		
+		
+		
+   
+  
+    <div class="sidebar-overlay" data-reff=""></div>
+	
+		<script th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+
+				<!-- Bootstrap Core JS -->
+				<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+				<!-- Feather Js -->
+				<script th:src="@{/assets/js/feather.min.js}"></script>
+
+				<!-- Slimscroll -->
+				<script th:src="@{/assets/js/jquery.slimscroll.js}"></script>
+
+				<!-- Select2 Js -->
+				<script th:src="@{/assets/js/select2.min.js}"></script>
+
+				<!-- Datatables JS -->
+				<script
+					th:src="@{/assets/plugins/datatables/jquery.dataTables.min.js}"></script>
+				<script th:src="@{/assets/plugins/datatables/datatables.min.js}"></script>
+
+				<!-- counterup JS -->
+				<script th:src="@{/assets/js/jquery.waypoints.js}"></script>
+				<script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
+
+				<!-- Apexchart JS -->
+				<script th:src="@{/assets/plugins/apexchart/apexcharts.min.js}"></script>
+				<script th:src="@{/assets/plugins/apexchart/chart-data.js}"></script>
+
+				<!-- Custom JS -->
+				<script th:src="@{/assets/js/app.js}"></script>
+
+</body>
+
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/html/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 10:44:15 GMT -->
+</html>

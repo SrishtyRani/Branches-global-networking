@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/html/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 10:42:53 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" type="image/x-icon"
+	href="/assets/img/121%201.png">
+<title>Branches Global Network</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+<link rel="stylesheet"
+	th:href="@{/assets/plugins/fontawesome/css/all.min.css}">
+<link rel="stylesheet" th:href="@{/assets/css/select2.min.css}">
+
+<!-- Fontawesome CSS -->
+<link rel="stylesheet"
+	th:href="@{/assets/plugins/fontawesome/css/fontawesome.min.css}">
+
+<!-- Datatables CSS -->
+<link rel="stylesheet"
+	th:href="@{/assets/plugins/datatables/datatables.min.css}">
+
+<!-- Feathericon CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/feather.css}">
+
+<!-- Main CSS -->
+<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+
+
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+		<div th:replace="~{header :: header}"></div>
+		<div th:replace="~{side :: sidebar}"></div>
+		<div class="page-wrapper">
+			<div class="content">
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Dashboard
+								</a></li>
+								<li class="breadcrumb-item"><i
+									class="feather-chevron-right"></i></li>
+								<li class="breadcrumb-item active">Edit Profile</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			    <div th:if="${successMessage}" id="successMessage" class="alert alert-success" role="alert">
+            <span th:text="${successMessage}"></span>
+        </div>
+				<form id="basic-info-form" action="/admin/profile" method="post"
+					enctype="multipart/form-data">
+					<div class="card-box">
+						<h3 class="card-title">Basic Information</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="profile-basic">
+									<div class="row">
+										<input type="hidden" name="id" th:value="${adminUser?.id}">
+										<div class="col-md-6">
+											<div class="input-block local-forms">
+												<label class="focus-label">Name</label> <input type="text"
+													class="form-control floating" name="name"
+													th:value="${adminUser?.name}">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="input-block local-forms">
+												<label class="focus-label">Email</label> <input type="text"
+													class="form-control floating" name="email"
+													th:value="${adminUser?.email}">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-primary submit-btn mb-4" type="submit">Save</button>
+						</div>
+					</div>
+				</form>
+				<!-- Change Password Form -->
+				<div class="row">
+					<div class="col-md-6">
+
+						<form id="change-password-form" action="/admin/profile/password"
+							method="post" class="profile_form">
+							<div class="card-box">
+						    <div th:if="${error}">
+        <p th:text="${error}" style="color: red;"></p>
+    </div>
+
+								<h3 class="card-title">Change Password</h3>
+
+								<div class="row">
+									<input type="hidden" name="id" th:value="${adminUser?.id}">
+									<div class="col-md-12">
+										<div class="col-md-6">
+											<div class="input-block local-forms">
+												<label class="focus-label">Old Password</label> <input
+													type="password" class="form-control floating"
+													name="oldPassword">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="input-block local-forms">
+												<label class="focus-label">New Password</label> <input
+													type="password" class="form-control floating"
+													id="newPassword" name="newPassword">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="input-block local-forms">
+												<label class="focus-label">Confirm Password</label> <input
+													type="password" class="form-control floating"
+													id="confirmPassword" name="confirmPassword">
+											</div>
+										</div>
+									</div>
+
+									<div class="text-start">
+										<button class="btn btn-primary submit-btn mb-4" type="submit">Save</button>
+									</div>
+
+								</div>
+							</div>
+						</form>
+
+
+					</div>
+					<div class="col-md-6">
+					
+					<form id="profile-image-form" action="/admin/profile/image"  class="profile_form"  method="post" enctype="multipart/form-data" >
+					<div class="card-box">
+						<input type="hidden" name="id" th:value="${adminUser?.id}">
+						<h3 class="card-title">Profile Image</h3>
+						<div class="profile-img-wrap_2 ">
+						<img th:src="${loggedInUserPhoto}" alt="img"/>
+						</div>
+					</div>
+					
+					<div class="choosefile_sec">
+					<p>profile image</p>
+					<input class="form-control" id="formFileLg" type="file" name="featuredImage">
+					
+					<div class="mt-4 text-center">
+					<button class="btn btn-primary submit-btn mb-4" type="submit">Save</button>
+					</div>
+
+					</div>
+					</form>
+						<!-- <form id="profile-image-form" action="/admin/profile/image"
+							method="post" enctype="multipart/form-data" class="profile_form">
+							<div class="card-box">
+								<h3 class="card-title">Profile Image</h3>
+								<div class="">
+									<div class="profile-img-wrap">
+										<img class="inline-block" th:src="${loggedInUserPhoto}"
+											alt="user"
+											 onchange="previewImage(event)">
+											
+											
+										<div class="fileupload btn">
+											<input type="hidden" name="id" th:value="${adminUser?.id}">
+											<span class="btn-text">Edit</span>
+											   <input class="upload" name="featuredImage" type="file">
+											<input id="upload" class="upload" name="featuredImage"
+												type="file" onchange="previewImage(event)">
+										</div>
+									</div>
+									<div class="text-center">
+										<button class="btn btn-primary submit-btn mb-4" type="submit">Save</button>
+									</div>
+
+								</div>
+
+
+							</div>
+						</form> -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sidebar-overlay" data-reff=""></div>
+
+
+		<script th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+
+		<!-- Bootstrap Core JS -->
+		<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+		<!-- Feather Js -->
+		<script th:src="@{/assets/js/feather.min.js}"></script>
+
+		<!-- Slimscroll -->
+		<script th:src="@{/assets/js/jquery.slimscroll.js}"></script>
+
+		<!-- Select2 Js -->
+		<script th:src="@{/assets/js/select2.min.js}"></script>
+
+		<!-- Datatables JS -->
+		<script
+			th:src="@{/assets/plugins/datatables/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/assets/plugins/datatables/datatables.min.js}"></script>
+
+		<!-- counterup JS -->
+		<script th:src="@{/assets/js/jquery.waypoints.js}"></script>
+		<script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
+
+		<!-- Apexchart JS -->
+		<script th:src="@{/assets/plugins/apexchart/apexcharts.min.js}"></script>
+		<script th:src="@{/assets/plugins/apexchart/chart-data.js}"></script>
+
+		<!-- Custom JS -->
+		<script th:src="@{/assets/js/app.js}"></script>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script th:inline="javascript">
+        $(document).ready(function() {
+          console.log("hello");
+            setTimeout(function() {
+                $('#successMessage').fadeOut('slow');
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>
